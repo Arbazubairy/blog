@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    IT Age May-June
+{% endblock title %}
+
+{% block css %}
+
+.blogs_inliner{
+    display:contents;display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.article{
+    border:0px;
+    background-color: white;
+}
+
+.cont{
+    width: fit-content;
+    margin-left:20px;
+}
+{% endblock css %}
+
+{% block body %}
+
+
+    {% for posts in allposts %}
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption&display=swap" rel="stylesheet">
+<main class="main pt-4 my-4">
+   
+    <div class="container mb-4">
+
+        <div class="row blogs_inliner">
+            <div class="col-md-9">
+
+                <article class="card  article">
+                
+                    <header class="card-header" style="background-color: white;">
+                    <div class="card-meta">
+                        <pr  style="font-family: 'PT Sans Caption', sans-serif;">A Blog By {{posts.author}}</pr>
+                    </div>
+                    <a href="{{posts.slug}}" style='color:black;'>
+                        <h4 class="card-title" style="font-family: 'PT Serif', serif;">{{posts.title}}</h4>
+                    </a>
+                    </header>
+                    <div class="row">
+                        <a href="{{posts.slug}}" class="col-md-4 mt-3 ml-5">
+                            <img class="card-img" src="{{posts.thumbnail.url}}" alt="">
+                        </a>
+                        <div class="col-md-6 mx-auto">
+                            <div class="card-body mb-2" style="font-family: 'PT Sans Caption', sans-serif;">
+                                <p class="card-text">{{posts.content|truncatechars:300}}</p>
+                                <a class="btn btn-primary" href="{{posts.slug}}" role="button">Continue Reading</a>                 
+
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </article><!-- /.card -->
+            <hr>
+            </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+    {% endfor %}
+
+{% endblock body %}
