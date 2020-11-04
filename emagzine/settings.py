@@ -26,7 +26,7 @@ SECRET_KEY = '!nyixc8#c=qsvp-a-k3s91fv8ngk^b4&5lk9o&sq^0g$lbd49*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1','itageblog.herokuapp.com/']
 
 
 # Application definition
