@@ -1,1 +1,1 @@
-web: gunicorn EMAGZINE.wsgi --log-file -
+web: gunicorn EMAGZINE.wsgi --log-file- 
