@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '!nyixc8#c=qsvp-a-k3s91fv8ngk^b4&5lk9o&sq^0g$lbd49*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','itageblog.herokuapp.com/']
 
@@ -132,6 +132,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_DIRS =[
+    os.path.join(BASE_DIR,'static')
+]
 
 
 
